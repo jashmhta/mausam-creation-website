@@ -265,7 +265,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="font-['Playfair_Display'] font-900 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-foreground leading-[1.02]"
+                className="font-['Playfair_Display'] font-900 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white leading-[1.02]"
               >
                 <div className="overflow-hidden">
                   <motion.span
@@ -306,7 +306,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-foreground/70 text-lg leading-relaxed mb-8 max-w-lg"
+              className="text-white/75 text-lg leading-relaxed mb-8 max-w-lg"
             >
               Premium trophies and awards for sports, corporate events, and special occasions.
               From cricket to crystal — we craft symbols of achievement that last a lifetime.
@@ -347,7 +347,7 @@ export default function Home() {
                 { icon: Clock, text: "5+ Years" },
                 { icon: Package, text: "Pan-India Delivery" },
               ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-1.5 text-foreground/60 text-xs">
+                <div key={text} className="flex items-center gap-1.5 text-white/55 text-xs">
                   <Icon className="w-3.5 h-3.5 text-gold" />
                   {text}
                 </div>

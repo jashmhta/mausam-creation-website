@@ -426,7 +426,7 @@
       linear-gradient(to right, oklch(0 0 0 / 0.92) 0%, oklch(0 0 0 / 0.70) 40%, oklch(0 0 0 / 0.20) 65%, transparent 100%);
   }
   .hero-bottom-fade {
-    background: linear-gradient(to top, var(--background) 0%, transparent 100%);
+    background: linear-gradient(to top, oklch(0 0 0 / 1) 0%, transparent 100%);
   }
 
   /* ── Stat counter card ── */
