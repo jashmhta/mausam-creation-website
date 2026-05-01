@@ -38,7 +38,7 @@ export default function CartDrawer() {
       `• ${item.product.name} (${item.product.size}) × ${item.quantity} = ${formatPrice(item.product.price * item.quantity)}`
     );
     const msg = [
-      "🏆 *Order Enquiry — Mausam Creation*",
+      "*Order Enquiry - Mausam Creation*",
       "",
       ...lines,
       "",

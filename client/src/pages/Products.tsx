@@ -6,7 +6,11 @@
 import { useState, useEffect } from "react";
 import { useSearch } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, SlidersHorizontal, X, Trophy, ChevronDown } from "lucide-react";
+import { Search, SlidersHorizontal, X, Trophy, ChevronDown, Star, TreePine, Gem, Dumbbell, Layers, Medal, Landmark, PenLine } from "lucide-react";
+
+const CAT_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  Trophy, Star, TreePine, Gem, Dumbbell, Layers, Medal, Landmark, PenLine,
+};
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS, CATEGORIES } from "@/lib/products";
 
@@ -140,7 +144,7 @@ export default function Products() {
                   : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-gold/50"
               }`}
             >
-              <span>{cat.icon}</span>
+              {(() => { const Icon = CAT_ICONS[cat.icon]; return Icon ? <Icon className="w-3.5 h-3.5" /> : null; })()}
               {cat.name}
               <span className="opacity-60 text-xs">({cat.count})</span>
             </button>
@@ -227,7 +231,7 @@ export default function Products() {
                     }`}
                   >
                     <span className="flex items-center gap-2">
-                      <span>{cat.icon}</span>
+                      {(() => { const Icon = CAT_ICONS[cat.icon]; return Icon ? <Icon className="w-4 h-4" /> : null; })()}
                       {cat.name}
                     </span>
                     <span className="text-xs opacity-60">{cat.count}</span>

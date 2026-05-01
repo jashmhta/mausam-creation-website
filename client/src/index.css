@@ -416,17 +416,15 @@
   }
 
   /* ── Hero dual-theme overlay ── */
-  /* Light mode: strong warm ivory gradient from left + top fade */
+  /* Light mode: very subtle — video is the hero, only a soft left vignette for text legibility */
   .hero-light-overlay {
     background:
-      linear-gradient(to right, oklch(0.982 0.007 85 / 0.97) 0%, oklch(0.982 0.007 85 / 0.88) 45%, oklch(0.982 0.007 85 / 0.45) 70%, transparent 100%),
-      linear-gradient(to bottom, oklch(0.982 0.007 85 / 0.55) 0%, transparent 50%);
+      linear-gradient(to right, oklch(0.982 0.007 85 / 0.72) 0%, oklch(0.982 0.007 85 / 0.45) 35%, oklch(0.982 0.007 85 / 0.10) 60%, transparent 100%);
   }
-  /* Dark mode: deep black from left, subtle center */
+  /* Dark mode: deep black vignette from left */
   .dark .hero-light-overlay {
     background:
-      linear-gradient(to right, oklch(0 0 0 / 0.96) 0%, oklch(0 0 0 / 0.82) 45%, oklch(0 0 0 / 0.30) 70%, transparent 100%),
-      linear-gradient(to bottom, oklch(0 0 0 / 0.50) 0%, transparent 50%);
+      linear-gradient(to right, oklch(0 0 0 / 0.92) 0%, oklch(0 0 0 / 0.70) 40%, oklch(0 0 0 / 0.20) 65%, transparent 100%);
   }
   .hero-bottom-fade {
     background: linear-gradient(to top, var(--background) 0%, transparent 100%);

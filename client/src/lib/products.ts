@@ -72,7 +72,7 @@ export const CATEGORIES: Category[] = [
     count: 35,
     image: IMG.badminton,
     description: "Celebrate athletic excellence with our premium sport trophies for cricket, badminton, chess, football, and more.",
-    icon: "🏆",
+    icon: "Trophy",
   },
   {
     id: "award-trophy",
@@ -80,7 +80,7 @@ export const CATEGORIES: Category[] = [
     count: 15,
     image: IMG.fiberStar,
     description: "Elegant award trophies for corporate events, cultural programs, and special recognition ceremonies.",
-    icon: "⭐",
+    icon: "Star",
   },
   {
     id: "wooden-trophy",
@@ -88,7 +88,7 @@ export const CATEGORIES: Category[] = [
     count: 9,
     image: IMG.mdfMemento,
     description: "Timeless wooden trophies and mementos crafted from premium wood with intricate detailing.",
-    icon: "🪵",
+    icon: "TreePine",
   },
   {
     id: "crystal-trophy",
@@ -96,7 +96,7 @@ export const CATEGORIES: Category[] = [
     count: 3,
     image: IMG.crystal12,
     description: "Stunning crystal and glass trophies that catch light beautifully — perfect for prestigious awards.",
-    icon: "💎",
+    icon: "Gem",
   },
   {
     id: "bodybuilder-trophy",
@@ -104,7 +104,7 @@ export const CATEGORIES: Category[] = [
     count: 4,
     image: IMG.bodybuilderAcrylic,
     description: "Powerful bodybuilder and fitness trophies that honor strength, dedication, and athletic achievement.",
-    icon: "💪",
+    icon: "Dumbbell",
   },
   {
     id: "acrylic-trophy",
@@ -112,7 +112,7 @@ export const CATEGORIES: Category[] = [
     count: 2,
     image: IMG.acrylicWinner,
     description: "Modern acrylic trophies with a sleek, contemporary look ideal for all occasions.",
-    icon: "🔷",
+    icon: "Layers",
   },
   {
     id: "metal-trophy",
@@ -120,7 +120,7 @@ export const CATEGORIES: Category[] = [
     count: 2,
     image: IMG.metalCup18,
     description: "Durable and prestigious metal trophies with polished finishes for lasting impressions.",
-    icon: "🥇",
+    icon: "Medal",
   },
   {
     id: "statue",
@@ -128,7 +128,7 @@ export const CATEGORIES: Category[] = [
     count: 5,
     image: IMG.statueShivaji,
     description: "Beautifully crafted Chhatrapati Shivaji Maharaj statues, Krishna idols, and decorative resin statues.",
-    icon: "🗿",
+    icon: "Landmark",
   },
   {
     id: "decor",
@@ -136,7 +136,7 @@ export const CATEGORIES: Category[] = [
     count: 2,
     image: IMG.clockStand,
     description: "Elegant pen stands, wooden name plates, and table clocks for your office or home.",
-    icon: "🖊️",
+    icon: "PenLine",
   },
 ];
 

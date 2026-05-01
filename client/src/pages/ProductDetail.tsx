@@ -60,7 +60,7 @@ export default function ProductDetail() {
 
   const buildWhatsAppMessage = () => {
     const msg = [
-      `🏆 *Product Enquiry — Mausam Creation*`,
+      `*Product Enquiry - Mausam Creation*`,
       ``,
       `*Product:* ${product.name}`,
       `*Material:* ${product.material}`,

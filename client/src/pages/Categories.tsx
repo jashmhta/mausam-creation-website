@@ -4,8 +4,12 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronRight, ArrowRight, Trophy, Star, TreePine, Gem, Dumbbell, Layers, Medal, Landmark, PenLine } from "lucide-react";
 import { CATEGORIES } from "@/lib/products";
+
+const CAT_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  Trophy, Star, TreePine, Gem, Dumbbell, Layers, Medal, Landmark, PenLine,
+};
 
 export default function Categories() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -51,7 +55,9 @@ export default function Categories() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                      <div className="absolute top-4 right-4 text-3xl">{cat.icon}</div>
+                      <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-gold/20 backdrop-blur-sm border border-gold/30 flex items-center justify-center">
+                        {(() => { const Icon = CAT_ICONS[cat.icon]; return Icon ? <Icon className="w-5 h-5 text-gold" /> : null; })()}
+                      </div>
                     </div>
 
                     {/* Content */}
