@@ -2,14 +2,17 @@
    MAUSAM CREATION — App Router
    Design: "Golden Ceremony" — Contemporary Indian Luxury
    Theme: Dual (dark/light) with Playfair Display + Nunito Sans
+   Cart: Global CartProvider + CartDrawer
    ============================================================ */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { CartProvider } from "./contexts/CartContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import CartDrawer from "./components/CartDrawer";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
@@ -23,6 +26,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
+      <CartDrawer />
     </div>
   );
 }
@@ -47,10 +51,12 @@ function Router() {
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" switchable>
-      <TooltipProvider>
-        <Toaster richColors position="top-right" />
-        <Router />
-      </TooltipProvider>
+      <CartProvider>
+        <TooltipProvider>
+          <Toaster richColors position="top-right" />
+          <Router />
+        </TooltipProvider>
+      </CartProvider>
     </ThemeProvider>
   );
 }

@@ -124,7 +124,7 @@ export default function About() {
               <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-2xl p-4 shadow-xl">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/manus-storage/mausam-logo-original_d18bff3f.jpeg"
+                    src="/manus-storage/mausam-logo-nobg_340d5579.png"
                     alt="Mausam Creation"
                     className="w-12 h-12 object-contain rounded-lg"
                   />

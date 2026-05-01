@@ -34,7 +34,7 @@ export default function Footer() {
             <Link href="/">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="/manus-storage/mausam-logo-original_d18bff3f.jpeg"
+                  src="/manus-storage/mausam-logo-nobg_340d5579.png"
                   alt="Mausam Creation"
                   className="w-12 h-12 object-contain rounded-lg"
                 />

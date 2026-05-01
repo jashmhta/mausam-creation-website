@@ -1,12 +1,13 @@
 /* ============================================================
    MAUSAM CREATION — Navbar
-   Design: Glassmorphic pill navigation, scroll-hide behavior
-   Dual theme toggle with gold accent
+   Design: Glassmorphic pill navigation, scroll-hide behavior,
+   Cart icon with animated badge, dual theme toggle
    ============================================================ */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Sun, Moon, Phone, ShoppingBag } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCart } from "@/contexts/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
@@ -23,7 +24,10 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { theme, toggleTheme } = useTheme();
+  const { totalItems, toggleCart } = useCart();
   const [location] = useLocation();
+  const [prevTotal, setPrevTotal] = useState(totalItems);
+  const [cartBounce, setCartBounce] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +48,15 @@ export default function Navbar() {
     setMenuOpen(false);
     window.scrollTo(0, 0);
   }, [location]);
+
+  // Bounce animation when cart item count increases
+  useEffect(() => {
+    if (totalItems > prevTotal) {
+      setCartBounce(true);
+      setTimeout(() => setCartBounce(false), 600);
+    }
+    setPrevTotal(totalItems);
+  }, [totalItems, prevTotal]);
 
   return (
     <>
@@ -66,9 +79,10 @@ export default function Navbar() {
             <Link href="/">
               <div className="flex items-center gap-2.5 group">
                 <img
-                  src="/manus-storage/mausam-logo-original_d18bff3f.jpeg"
+                  src="/manus-storage/mausam-logo-nobg_340d5579.png"
                   alt="Mausam Creation"
-                  className="w-11 h-11 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
+                  className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300"
+                  style={{ filter: "drop-shadow(0 2px 8px rgba(212,175,55,0.3))" }}
                 />
                 <div>
                   <span className="font-['Playfair_Display'] font-bold text-base leading-tight block text-foreground">
@@ -111,6 +125,37 @@ export default function Navbar() {
                 ) : (
                   <Moon className="w-4.5 h-4.5" />
                 )}
+              </button>
+
+              {/* Cart Button */}
+              <button
+                onClick={toggleCart}
+                className={`relative w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${
+                  totalItems > 0
+                    ? "text-gold bg-gold/10 hover:bg-gold/20"
+                    : "text-muted-foreground hover:text-gold hover:bg-accent"
+                }`}
+                aria-label="Open cart"
+              >
+                <motion.div
+                  animate={cartBounce ? { scale: [1, 1.3, 0.9, 1.1, 1] } : {}}
+                  transition={{ duration: 0.5 }}
+                >
+                  <ShoppingBag className="w-4.5 h-4.5" />
+                </motion.div>
+                <AnimatePresence>
+                  {totalItems > 0 && (
+                    <motion.span
+                      key="badge"
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0, opacity: 0 }}
+                      className="absolute -top-1 -right-1 w-4.5 h-4.5 rounded-full bg-gold text-yellow-950 text-[9px] font-800 flex items-center justify-center leading-none"
+                    >
+                      {totalItems > 9 ? "9+" : totalItems}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
               </button>
 
               {/* CTA Button */}
@@ -167,9 +212,16 @@ export default function Navbar() {
                   </motion.div>
                 ))}
                 <div className="section-divider my-2" />
+                <button
+                  onClick={() => { setMenuOpen(false); toggleCart(); }}
+                  className="w-full btn-gold-outline py-3 rounded-xl flex items-center justify-center gap-2 mb-2"
+                >
+                  <ShoppingBag className="w-4 h-4" />
+                  Cart {totalItems > 0 && `(${totalItems})`}
+                </button>
                 <Link href="/contact">
                   <button className="w-full btn-gold py-3 rounded-xl flex items-center justify-center gap-2">
-                    <ShoppingBag className="w-4 h-4" />
+                    <Phone className="w-4 h-4" />
                     Get a Quote
                   </button>
                 </Link>

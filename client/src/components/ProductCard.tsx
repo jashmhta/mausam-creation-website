@@ -1,13 +1,15 @@
 /* ============================================================
    MAUSAM CREATION — ProductCard
-   Design: Border beam on hover, gold shimmer, spring lift
+   Design: Always-on beam border, transparent product image,
+   Add to Cart with quantity awareness, spring lift on hover
    ============================================================ */
 import { useState } from "react";
 import { Link } from "wouter";
-import { ShoppingBag, Eye, Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { ShoppingBag, Eye, Star, Check, Plus, Minus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import type { Product } from "@/lib/products";
 import { formatPrice } from "@/lib/products";
+import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
   product: Product;
@@ -16,6 +18,31 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   const [imgError, setImgError] = useState(false);
+  const [addedFeedback, setAddedFeedback] = useState(false);
+  const { addToCart, isInCart, getItemQty, updateQuantity, removeFromCart } = useCart();
+  const inCart = isInCart(product.id);
+  const qty = getItemQty(product.id);
+
+  const handleAdd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(product, 1);
+    setAddedFeedback(true);
+    setTimeout(() => setAddedFeedback(false), 1800);
+  };
+
+  const handleIncrease = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    updateQuantity(product.id, qty + 1);
+  };
+
+  const handleDecrease = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (qty <= 1) removeFromCart(product.id);
+    else updateQuantity(product.id, qty - 1);
+  };
 
   return (
     <motion.div
@@ -24,78 +51,129 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="card-beam rounded-2xl bg-card border border-border product-card group overflow-hidden">
-        {/* Inner content wrapper */}
-        <div className="bg-card rounded-2xl overflow-hidden">
-          {/* Image */}
-          <div className="relative overflow-hidden aspect-[4/3] bg-gradient-to-b from-accent/20 to-accent/40 flex items-center justify-center">
-            <img
-              src={imgError ? "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" : product.image}
-              alt={product.name}
-              onError={() => setImgError(true)}
-              className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            {/* Overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="card-beam rounded-2xl product-card group">
+        {/* Inner card face */}
+        <div className="rounded-[calc(var(--radius-lg)-1px)] overflow-hidden bg-card">
+          {/* Image area — transparent bg, full product visible */}
+          <Link href={`/product/${product.id}`}>
+            <div className="relative aspect-[4/3] flex items-center justify-center overflow-hidden cursor-pointer"
+              style={{ background: "radial-gradient(ellipse at center, var(--accent) 0%, transparent 80%)" }}>
+              <img
+                src={imgError ? "/manus-storage/award-fiber-champions_9c139799.png" : product.image}
+                alt={product.name}
+                onError={() => setImgError(true)}
+                className="w-full h-full object-contain p-3 transition-transform duration-500 group-hover:scale-108 drop-shadow-lg"
+                style={{ filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.18))" }}
+                loading="lazy"
+              />
 
-            {/* Featured badge */}
-            {product.featured && (
-              <div className="absolute top-3 left-3 flex items-center gap-1 bg-gradient-to-r from-yellow-500 to-yellow-400 text-yellow-950 text-[10px] font-700 px-2.5 py-1 rounded-full">
-                <Star className="w-2.5 h-2.5 fill-current" />
-                Featured
+              {/* Featured badge */}
+              {product.featured && (
+                <div className="absolute top-3 left-3 flex items-center gap-1 bg-gradient-to-r from-yellow-500 to-yellow-400 text-yellow-950 text-[10px] font-700 px-2.5 py-1 rounded-full shadow-md">
+                  <Star className="w-2.5 h-2.5 fill-current" />
+                  Featured
+                </div>
+              )}
+
+              {/* In-cart badge */}
+              {inCart && (
+                <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-gold flex items-center justify-center shadow-md">
+                  <Check className="w-3 h-3 text-yellow-950" />
+                </div>
+              )}
+
+              {/* Quick view overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
+                <span className="flex items-center gap-1.5 text-white text-xs font-600 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                  <Eye className="w-3 h-3" />
+                  View Details
+                </span>
               </div>
-            )}
-
-            {/* Quick actions */}
-            <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-              <Link href={`/product/${product.id}`}>
-                <button className="w-8 h-8 rounded-lg bg-white/90 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-gold hover:text-yellow-950 transition-all duration-200 shadow-lg">
-                  <Eye className="w-3.5 h-3.5" />
-                </button>
-              </Link>
-              <Link href="/contact">
-                <button className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center text-yellow-950 hover:bg-yellow-400 transition-all duration-200 shadow-lg">
-                  <ShoppingBag className="w-3.5 h-3.5" />
-                </button>
-              </Link>
             </div>
-          </div>
+          </Link>
 
           {/* Content */}
           <div className="p-4">
             {/* Category tag */}
-            <span className="text-[10px] font-700 tracking-widest uppercase text-gold mb-2 block">
+            <span className="text-[10px] font-700 tracking-widest uppercase text-gold mb-1.5 block">
               {product.material} · {product.size}
             </span>
 
             {/* Name */}
-            <h3 className="font-['Playfair_Display'] font-600 text-sm text-foreground leading-snug mb-3 line-clamp-2 group-hover:text-gold transition-colors duration-200">
-              {product.name}
-            </h3>
+            <Link href={`/product/${product.id}`}>
+              <h3 className="font-['Playfair_Display'] font-600 text-sm text-foreground leading-snug mb-3 line-clamp-2 hover:text-gold transition-colors duration-200 cursor-pointer">
+                {product.name}
+              </h3>
+            </Link>
 
-            {/* Price & CTA */}
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-[10px] text-muted-foreground">Starting from</p>
-                <p className="font-['Nunito_Sans'] font-700 text-base text-gold">
-                  {formatPrice(product.price)}
-                  <span className="text-xs text-muted-foreground font-400">/{product.priceUnit}</span>
-                </p>
-              </div>
-              <Link href="/contact">
-                <button className="btn-gold-outline text-[10px] px-3 py-1.5 rounded-lg">
-                  Quote
-                </button>
-              </Link>
+            {/* Price */}
+            <div className="mb-3">
+              <p className="text-[10px] text-muted-foreground">Starting from</p>
+              <p className="font-['Nunito_Sans'] font-700 text-base text-gold">
+                {formatPrice(product.price)}
+                <span className="text-xs text-muted-foreground font-400">/{product.priceUnit}</span>
+              </p>
+              {product.minOrder && product.minOrder > 1 && (
+                <p className="text-[10px] text-muted-foreground">Min. {product.minOrder} pcs</p>
+              )}
             </div>
 
-            {/* Min order */}
-            {product.minOrder && (
-              <p className="text-[10px] text-muted-foreground mt-2">
-                Min. Order: {product.minOrder} {product.priceUnit}s
-              </p>
-            )}
+            {/* Add to Cart / Qty Controls */}
+            <AnimatePresence mode="wait">
+              {!inCart ? (
+                <motion.button
+                  key="add"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.18 }}
+                  onClick={handleAdd}
+                  className={`w-full py-2.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-700 tracking-wider uppercase transition-all duration-200 ${
+                    addedFeedback
+                      ? "bg-green-500 text-white"
+                      : "btn-gold"
+                  }`}
+                >
+                  {addedFeedback ? (
+                    <>
+                      <Check className="w-3.5 h-3.5" />
+                      Added!
+                    </>
+                  ) : (
+                    <>
+                      <ShoppingBag className="w-3.5 h-3.5" />
+                      Add to Cart
+                    </>
+                  )}
+                </motion.button>
+              ) : (
+                <motion.div
+                  key="qty"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.18 }}
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex items-center gap-1 bg-accent/60 rounded-xl p-1 flex-1 justify-between">
+                    <button
+                      onClick={handleDecrease}
+                      className="w-7 h-7 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-background transition-all"
+                    >
+                      <Minus className="w-3 h-3" />
+                    </button>
+                    <span className="font-700 text-sm text-foreground min-w-[1.5rem] text-center">{qty}</span>
+                    <button
+                      onClick={handleIncrease}
+                      className="w-7 h-7 rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-yellow-950 transition-all"
+                    >
+                      <Plus className="w-3 h-3" />
+                    </button>
+                  </div>
+                  <span className="text-xs font-700 text-gold shrink-0">{formatPrice(product.price * qty)}</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>

@@ -32,37 +32,37 @@ export interface Category {
 // Real product images from IndiaMart CDN
 const IMG = {
   // Sport trophies
-  badminton: "/manus-storage/sport-badminton-trophy_ea652cb2.jpeg",
-  metalCup: "/manus-storage/sport-metal-cricket-cup_e161d2ff.jpeg",
+  badminton: "/manus-storage/sport-badminton-trophy_c56b46eb.png",
+  metalCup: "/manus-storage/sport-metal-cricket-cup_91e21ef9.png",
   // Award trophies
-  fiberStar: "/manus-storage/award-fiber-star_1b4b7c35.jpeg",
-  fiberMusic: "/manus-storage/award-fiber-music_48d9fe7b.jpeg",
-  fiberChampions: "/manus-storage/award-fiber-champions_88e239c4.jpg",
-  fiberBook: "/manus-storage/award-fiber-book_a4660b9b.jpeg",
-  metalStar: "/manus-storage/metal-award-20_6ba6c421.jpeg",
-  marbleCorporate: "/manus-storage/award-marble-corporate_1225689d.jpeg",
+  fiberStar: "/manus-storage/award-fiber-star_a413dc2d.png",
+  fiberMusic: "/manus-storage/award-fiber-music_ab1d1a25.png",
+  fiberChampions: "/manus-storage/award-fiber-champions_9c139799.png",
+  fiberBook: "/manus-storage/award-fiber-book_8a23f2d0.png",
+  metalStar: "/manus-storage/metal-award-20_89343edf.png",
+  marbleCorporate: "/manus-storage/award-marble-corporate_5a0dc07b.png",
   // Wooden trophies
-  mdfMemento: "/manus-storage/wooden-mdf-memento_20946946.jpeg",
-  woodenMemento10: "/manus-storage/wooden-memento-10_219635de.jpg",
-  woodenAward8: "/manus-storage/wooden-award-8_61aa343d.jpeg",
+  mdfMemento: "/manus-storage/wooden-mdf-memento_431e18ca.png",
+  woodenMemento10: "/manus-storage/wooden-memento-10_55327c88.png",
+  woodenAward8: "/manus-storage/wooden-award-8_ea5d544d.png",
   // Crystal trophies
-  crystal12: "/manus-storage/crystal-award-12_ab41cd1d.jpg",
-  crystal7: "/manus-storage/crystal-award-7_3474c675.jpeg",
+  crystal12: "/manus-storage/crystal-award-12_246bfaae.png",
+  crystal7: "/manus-storage/crystal-award-7_183274ce.png",
   // Bodybuilder trophies
-  bodybuilderAcrylic: "/manus-storage/bodybuilder-acrylic-8_50f03dc3.jpg",
-  bodybuilderResin14: "/manus-storage/bodybuilder-resin-14_459d3e7c.jpg",
+  bodybuilderAcrylic: "/manus-storage/bodybuilder-acrylic-8_d6b6e9e3.png",
+  bodybuilderResin14: "/manus-storage/bodybuilder-resin-14_0a5f2936.png",
   // Acrylic trophies
-  acrylicWinner: "/manus-storage/acrylic-winner-11_0bb249d1.jpg",
-  acrylicPainting: "/manus-storage/acrylic-painting-5_bf0e781d.jpeg",
+  acrylicWinner: "/manus-storage/acrylic-winner-11_d9091aa3.png",
+  acrylicPainting: "/manus-storage/acrylic-painting-5_3d47dd82.png",
   // Metal trophies
-  metalCup18: "/manus-storage/metal-cup-18_1f81938a.jpeg",
-  metalAward20: "/manus-storage/metal-award-20_6ba6c421.jpeg",
+  metalCup18: "/manus-storage/metal-cup-18_f4f537e5.png",
+  metalAward20: "/manus-storage/metal-award-20_89343edf.png",
   // Statues
-  statueShivaji: "/manus-storage/statue-shivaji_2327f2ba.jpg",
-  statueKrishna: "/manus-storage/statue-krishna_7eabe599.jpg",
+  statueShivaji: "/manus-storage/statue-shivaji_c04c1ec6.png",
+  statueKrishna: "/manus-storage/statue-krishna_0f71303f.png",
   // Decor
-  clockStand: "/manus-storage/decor-clock-stand_cd6f2b2c.jpg",
-  nameplate: "/manus-storage/decor-nameplate_06e7b5d1.jpeg",
+  clockStand: "/manus-storage/decor-clock-stand_3c5ef2a1.png",
+  nameplate: "/manus-storage/decor-nameplate_812389e7.png",
 };
 
 export const CATEGORIES: Category[] = [
