@@ -1,3 +1,11 @@
+/* =============================================================
+   MAUSAM CREATION — "Golden Ceremony" Design System
+   Design Philosophy: Contemporary Indian Luxury meets Global Editorial
+   Dark Mode: Deep midnight navy + champagne gold + warm white
+   Light Mode: Warm ivory + rich gold + deep charcoal
+   Typography: Playfair Display (display) + Nunito Sans (body)
+   ============================================================= */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -27,98 +35,90 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
 }
 
+/* ── Light Theme: Warm Ivory Ceremony Hall ── */
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --radius: 0.75rem;
+
+  /* Gold palette */
+  --gold: oklch(0.72 0.12 75);         /* #D4AF37 champagne gold */
+  --gold-light: oklch(0.82 0.10 78);   /* lighter gold */
+  --gold-dark: oklch(0.55 0.13 72);    /* #B8860B dark gold */
+
+  --background: oklch(0.985 0.005 85);  /* warm ivory */
+  --foreground: oklch(0.15 0.01 280);   /* deep charcoal */
+  --card: oklch(0.975 0.006 85);
+  --card-foreground: oklch(0.15 0.01 280);
+  --popover: oklch(0.985 0.005 85);
+  --popover-foreground: oklch(0.15 0.01 280);
+  --primary: oklch(0.55 0.13 72);       /* rich gold */
+  --primary-foreground: oklch(0.985 0.005 85);
+  --secondary: oklch(0.94 0.008 85);
+  --secondary-foreground: oklch(0.25 0.01 280);
+  --muted: oklch(0.94 0.006 85);
+  --muted-foreground: oklch(0.50 0.01 280);
+  --accent: oklch(0.92 0.015 78);
+  --accent-foreground: oklch(0.15 0.01 280);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --border: oklch(0.88 0.010 80);
+  --input: oklch(0.88 0.010 80);
+  --ring: oklch(0.72 0.12 75);
+  --sidebar: oklch(0.975 0.006 85);
+  --sidebar-foreground: oklch(0.15 0.01 280);
+  --sidebar-border: oklch(0.88 0.010 80);
+  --sidebar-ring: oklch(0.72 0.12 75);
 }
 
+/* ── Dark Theme: Midnight Navy Evening Gala ── */
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
+  --background: oklch(0.11 0.015 260);  /* deep midnight navy */
+  --foreground: oklch(0.93 0.008 85);   /* warm white */
+  --card: oklch(0.155 0.018 260);
+  --card-foreground: oklch(0.93 0.008 85);
+  --popover: oklch(0.155 0.018 260);
+  --popover-foreground: oklch(0.93 0.008 85);
+  --primary: oklch(0.72 0.12 75);       /* champagne gold */
+  --primary-foreground: oklch(0.11 0.015 260);
+  --secondary: oklch(0.20 0.020 260);
+  --secondary-foreground: oklch(0.80 0.008 85);
+  --muted: oklch(0.22 0.018 260);
+  --muted-foreground: oklch(0.60 0.010 85);
+  --accent: oklch(0.22 0.020 260);
+  --accent-foreground: oklch(0.93 0.008 85);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.72 0.12 75);
+  --gold: oklch(0.78 0.13 75);
+  --gold-light: oklch(0.88 0.10 78);
+  --gold-dark: oklch(0.62 0.12 72);
+  --sidebar: oklch(0.155 0.018 260);
+  --sidebar-foreground: oklch(0.93 0.008 85);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --sidebar-ring: oklch(0.72 0.12 75);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,24 +134,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +149,225 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
+
+  /* ── Gold Shimmer Button ── */
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+    background-size: 200% 200%;
+    animation: shimmer-bg 3s ease infinite;
+    color: oklch(0.11 0.015 260);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px oklch(0.72 0.12 75 / 40%);
+  }
+
+  /* ── Gold Outline Button ── */
+  .btn-gold-outline {
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+  }
+  .btn-gold-outline:hover {
+    background: var(--gold);
+    color: oklch(0.11 0.015 260);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px oklch(0.72 0.12 75 / 30%);
+  }
+
+  /* ── Border Beam Card ── */
+  .card-beam {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-beam::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: conic-gradient(
+      from var(--beam-angle, 0deg),
+      transparent 0deg,
+      oklch(0.72 0.12 75) 60deg,
+      oklch(0.88 0.10 78) 120deg,
+      transparent 180deg
+    );
+    border-radius: inherit;
+    animation: beam-rotate 4s linear infinite;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .card-beam:hover::before {
+    opacity: 1;
+  }
+  .card-beam > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Gold Text ── */
+  .text-gold {
+    color: var(--gold);
+  }
+  .text-gold-gradient {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .fill-gold {
+    fill: var(--gold);
+  }
+
+  /* ── Glassmorphic Nav ── */
+  .glass-nav {
+    background: oklch(0.985 0.005 85 / 70%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid oklch(0.88 0.010 80 / 50%);
+  }
+  .dark .glass-nav {
+    background: oklch(0.11 0.015 260 / 70%);
+    border: 1px solid oklch(1 0 0 / 10%);
+  }
+
+  /* ── Section Divider ── */
+  .section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.4;
+  }
+
+  /* ── Product Card ── */
+  .product-card {
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 64px oklch(0.72 0.12 75 / 15%);
+  }
+  .dark .product-card:hover {
+    box-shadow: 0 24px 64px oklch(0.72 0.12 75 / 25%);
+  }
+
+  /* ── Scroll Reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Keyframe Animations ── */
+@keyframes shimmer-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes beam-rotate {
+  from { --beam-angle: 0deg; }
+  to { --beam-angle: 360deg; }
+}
+
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.72 0.12 75 / 40%); }
+  50% { box-shadow: 0 0 0 12px oklch(0.72 0.12 75 / 0%); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+  33% { transform: translateY(-20px) translateX(10px) scale(0.8); opacity: 0.5; }
+  66% { transform: translateY(-10px) translateX(-8px) scale(1.1); opacity: 0.7; }
+  100% { transform: translateY(-30px) translateX(5px) scale(0.6); opacity: 0; }
+}
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-shimmer { animation: shimmer 3s linear infinite; }
+.animate-pulse-gold { animation: pulse-gold 2s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
+
+/* ── Selection ── */
+::selection {
+  background: oklch(0.72 0.12 75 / 30%);
+  color: var(--foreground);
 }

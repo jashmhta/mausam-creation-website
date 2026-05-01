@@ -1,41 +1,57 @@
+/* ============================================================
+   MAUSAM CREATION — App Router
+   Design: "Golden Ceremony" — Contemporary Indian Luxury
+   Theme: Dual (dark/light) with Playfair Display + Nunito Sans
+   ============================================================ */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Categories from "./pages/Categories";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import ProductDetail from "./pages/ProductDetail";
 
-
-function Router() {
+function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navbar />
+      <main className="flex-1">{children}</main>
+      <Footer />
+    </div>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
+function Router() {
+  return (
+    <Layout>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/products" component={Products} />
+        <Route path="/categories" component={Categories} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/product/:id" component={ProductDetail} />
+        <Route path="/404" component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </Layout>
+  );
+}
 
 function App() {
   return (
-    <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+    <ThemeProvider defaultTheme="dark" switchable>
+      <TooltipProvider>
+        <Toaster richColors position="top-right" />
+        <Router />
+      </TooltipProvider>
+    </ThemeProvider>
   );
 }
 
