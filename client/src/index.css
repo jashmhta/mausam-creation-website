@@ -415,13 +415,12 @@
     box-shadow: 0 8px 32px rgba(37, 211, 102, 0.6);
   }
 
-  /* ── Hero dual-theme overlay ── */
-  /* Light mode: very subtle — video is the hero, only a soft left vignette for text legibility */
+  /* ── Hero overlay — identical in both light and dark themes ── */
+  /* Pure cinematic black vignette from left — video always fully visible */
   .hero-light-overlay {
     background:
-      linear-gradient(to right, oklch(0.982 0.007 85 / 0.72) 0%, oklch(0.982 0.007 85 / 0.45) 35%, oklch(0.982 0.007 85 / 0.10) 60%, transparent 100%);
+      linear-gradient(to right, oklch(0 0 0 / 0.92) 0%, oklch(0 0 0 / 0.70) 40%, oklch(0 0 0 / 0.20) 65%, transparent 100%);
   }
-  /* Dark mode: deep black vignette from left */
   .dark .hero-light-overlay {
     background:
       linear-gradient(to right, oklch(0 0 0 / 0.92) 0%, oklch(0 0 0 / 0.70) 40%, oklch(0 0 0 / 0.20) 65%, transparent 100%);
