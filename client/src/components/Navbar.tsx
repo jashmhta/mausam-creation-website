@@ -82,7 +82,7 @@ export default function Navbar() {
                   src="/manus-storage/mausam-logo-nobg_340d5579.png"
                   alt="Mausam Creation"
                   className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300"
-                  style={{ filter: "drop-shadow(0 2px 8px rgba(212,175,55,0.3))" }}
+                  style={{ filter: "drop-shadow(0 2px 12px rgba(212,175,55,0.45))" }}
                 />
                 <div>
                   <span className="font-['Playfair_Display'] font-bold text-base leading-tight block text-foreground">

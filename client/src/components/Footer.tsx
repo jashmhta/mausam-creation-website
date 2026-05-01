@@ -23,7 +23,7 @@ const FOOTER_LINKS = {
 
 export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-card/80 border-t border-border backdrop-blur-sm">
       {/* Gold divider */}
       <div className="section-divider" />
 
@@ -36,7 +36,8 @@ export default function Footer() {
                 <img
                   src="/manus-storage/mausam-logo-nobg_340d5579.png"
                   alt="Mausam Creation"
-                  className="w-12 h-12 object-contain rounded-lg"
+                  className="w-12 h-12 object-contain"
+                  style={{ filter: "drop-shadow(0 2px 8px rgba(212,175,55,0.35))" }}
                 />
                 <div>
                   <span className="font-['Playfair_Display'] font-bold text-lg text-foreground block leading-tight">
