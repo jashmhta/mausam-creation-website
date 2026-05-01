@@ -77,7 +77,7 @@ export const CATEGORIES: Category[] = [
   {
     id: "award-trophy",
     name: "Award Trophy",
-    count: 16,
+    count: 15,
     image: IMG.fiberStar,
     description: "Elegant award trophies for corporate events, cultural programs, and special recognition ceremonies.",
     icon: "⭐",
@@ -133,7 +133,7 @@ export const CATEGORIES: Category[] = [
   {
     id: "decor",
     name: "Decor & Accessories",
-    count: 3,
+    count: 2,
     image: IMG.clockStand,
     description: "Elegant pen stands, wooden name plates, and table clocks for your office or home.",
     icon: "🖊️",
@@ -167,6 +167,16 @@ export const PRODUCTS: Product[] = [
   { id: "st-023", name: "18inch Fiber Cricket Winner Trophy", price: 2800, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "18inch", color: "Golden", usage: "Games", image: IMG.fiberChampions },
   { id: "st-024", name: "10inch Resin Golden Chess Winner Trophy", price: 950, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "10inch", color: "Golden", usage: "Games", image: IMG.metalCup },
   { id: "st-025", name: "8inch Acrylic Pickle Ball Winner Trophy", price: 500, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "8inch", color: "Golden", usage: "Games", image: IMG.acrylicWinner },
+  { id: "st-026", name: "13inch Acrylic APL Cricket Winner Trophy", price: 550, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "13inch", color: "Golden", usage: "Games", image: IMG.acrylicWinner },
+  { id: "st-027", name: "8inch Acrylic Tidal Ball Winner Trophy", price: 400, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "8inch", color: "Light Green", usage: "Games", image: IMG.acrylicPainting },
+  { id: "st-028", name: "10inch Acrylic Cricket Batsman Winner Trophy", price: 450, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "Dark Brown", usage: "Games", image: IMG.acrylicWinner },
+  { id: "st-029", name: "7.5inch Fiber Cricket Winner Trophy", price: 140, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "7.5inch", color: "Golden", usage: "Games", image: IMG.fiberChampions },
+  { id: "st-030", name: "7inch Fiber Cricket Winner Trophy", price: 250, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "7inch", color: "Golden", usage: "Games", image: IMG.fiberBook },
+  { id: "st-031", name: "8inch Fiber Chess Winner Trophy", price: 230, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "8inch", color: "Golden", usage: "Games", minOrder: 100, image: IMG.fiberChampions },
+  { id: "st-032", name: "8inch Fiber Sports Winner Trophy", price: 800, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "8inch", color: "Golden", usage: "Games", image: IMG.fiberStar },
+  { id: "st-033", name: "10inch Acrylic Man Of The Match Winner Trophy", price: 400, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "Dark Brown", usage: "Games", image: IMG.acrylicWinner },
+  { id: "st-034", name: "5inch Acrylic Pickle Ball Winner Trophy", price: 450, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "5inch", color: "Golden", usage: "Games", image: IMG.acrylicPainting },
+  { id: "st-035", name: "12inch Fiber Badminton Winner Trophy", price: 350, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "12inch", color: "Golden", usage: "Games", image: IMG.badminton },
 
   // ── Award Trophies ──
   { id: "at-001", name: "10inch Metal Cup Winner Trophy", price: 4800, priceUnit: "Piece", category: "award-trophy", material: "Metal", size: "10inch", color: "Golden", usage: "Games", image: IMG.metalCup18, featured: true },
@@ -180,8 +190,8 @@ export const PRODUCTS: Product[] = [
   { id: "at-009", name: "10inch Fiber Golden Book Pen Trophy", price: 1250, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: IMG.fiberBook, featured: true },
   { id: "at-010", name: "10inch Fiber Winner Trophy", price: 250, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: IMG.fiberChampions },
   { id: "at-011", name: "10inch Fiber Champions Winner Trophy", price: 400, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Games", image: IMG.fiberChampions },
-  { id: "at-012", name: "16inch Fiber Award Trophy", price: 500, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "16inch", color: "Golden", usage: "Events", image: IMG.fiberMusic },
-  { id: "at-013", name: "18inch Fiber Award Trophy", price: 1200, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "18inch", color: "Golden", usage: "Events", image: IMG.fiberBook },
+  { id: "at-012", name: "16inch Fiber Award Trophy", price: 500, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "16inch", color: "Golden", usage: "Events", image: IMG.fiberMusic },  { id: "at-013", name: "18inch Fiber Award Trophy", price: 1200, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "18inch", color: "Golden", usage: "Events", image: IMG.fiberMusic },
+  { id: "at-014", name: "5inch Fiber Singer Winner Trophy", price: 300, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "5inch", color: "Golden", usage: "Events", image: IMG.fiberMusic },
   { id: "at-014", name: "5inch Fiber Singer Winner Trophy", price: 300, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "5inch", color: "Golden", usage: "Events", image: IMG.fiberStar },
   { id: "at-015", name: "10inch Marble Corporate Award Winner Trophy", price: 950, priceUnit: "Piece", category: "award-trophy", material: "Marble", size: "10inch", color: "White", usage: "Events", image: IMG.marbleCorporate, featured: true },
 
@@ -225,7 +235,7 @@ export const PRODUCTS: Product[] = [
   // ── Decor & Accessories ──
   { id: "dc-001", name: "Wooden Table Clock Pen Stand", price: 350, priceUnit: "Piece", category: "decor", material: "Wooden", size: "Standard", color: "Brown", usage: "Office Decor", image: IMG.clockStand, featured: true },
   { id: "dc-002", name: "3mm Wooden Name Plate", price: 800, priceUnit: "Piece", category: "decor", material: "Wooden", size: "3mm", color: "Brown", usage: "Office Decor", image: IMG.nameplate },
-  { id: "dc-003", name: "Wooden Pen Stand", price: 250, priceUnit: "Piece", category: "decor", material: "Wooden", size: "Standard", color: "Brown", usage: "Office Decor", image: IMG.clockStand },
+
 ];
 
 export const FEATURED_PRODUCTS = PRODUCTS.filter(p => p.featured).slice(0, 8);
