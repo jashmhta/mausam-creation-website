@@ -117,15 +117,17 @@ export default function About() {
               className="relative"
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp"
-                alt="Our Workshop"
+                src="/manus-storage/hero-video-ref-A7QyNfcAq8d2erZ2bifdt3.webp"
+                alt="Our Trophy Collection"
                 className="rounded-2xl w-full object-cover h-80 shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-2xl p-4 shadow-xl">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center">
-                    <Trophy className="w-6 h-6 text-gold" />
-                  </div>
+                  <img
+                    src="/manus-storage/mausam-logo-original_d18bff3f.jpeg"
+                    alt="Mausam Creation"
+                    className="w-12 h-12 object-contain rounded-lg"
+                  />
                   <div>
                     <p className="font-['Playfair_Display'] font-700 text-foreground">GST Registered</p>
                     <p className="text-muted-foreground text-xs">Trusted Business</p>

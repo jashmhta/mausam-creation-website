@@ -1,6 +1,7 @@
 // ============================================================
 // MAUSAM CREATION — Product Data
 // All products sourced from IndiaMart profile
+// Real product images from IndiaMart CDN (imimg.com)
 // ============================================================
 
 export interface Product {
@@ -28,12 +29,48 @@ export interface Category {
   icon: string;
 }
 
+// Real product images from IndiaMart CDN
+const IMG = {
+  // Sport trophies
+  badminton: "/manus-storage/sport-badminton-trophy_ea652cb2.jpeg",
+  metalCup: "/manus-storage/sport-metal-cricket-cup_e161d2ff.jpeg",
+  // Award trophies
+  fiberStar: "/manus-storage/award-fiber-star_1b4b7c35.jpeg",
+  fiberMusic: "/manus-storage/award-fiber-music_48d9fe7b.jpeg",
+  fiberChampions: "/manus-storage/award-fiber-champions_88e239c4.jpg",
+  fiberBook: "/manus-storage/award-fiber-book_a4660b9b.jpeg",
+  metalStar: "/manus-storage/metal-award-20_6ba6c421.jpeg",
+  marbleCorporate: "/manus-storage/award-marble-corporate_1225689d.jpeg",
+  // Wooden trophies
+  mdfMemento: "/manus-storage/wooden-mdf-memento_20946946.jpeg",
+  woodenMemento10: "/manus-storage/wooden-memento-10_219635de.jpg",
+  woodenAward8: "/manus-storage/wooden-award-8_61aa343d.jpeg",
+  // Crystal trophies
+  crystal12: "/manus-storage/crystal-award-12_ab41cd1d.jpg",
+  crystal7: "/manus-storage/crystal-award-7_3474c675.jpeg",
+  // Bodybuilder trophies
+  bodybuilderAcrylic: "/manus-storage/bodybuilder-acrylic-8_50f03dc3.jpg",
+  bodybuilderResin14: "/manus-storage/bodybuilder-resin-14_459d3e7c.jpg",
+  // Acrylic trophies
+  acrylicWinner: "/manus-storage/acrylic-winner-11_0bb249d1.jpg",
+  acrylicPainting: "/manus-storage/acrylic-painting-5_bf0e781d.jpeg",
+  // Metal trophies
+  metalCup18: "/manus-storage/metal-cup-18_1f81938a.jpeg",
+  metalAward20: "/manus-storage/metal-award-20_6ba6c421.jpeg",
+  // Statues
+  statueShivaji: "/manus-storage/statue-shivaji_2327f2ba.jpg",
+  statueKrishna: "/manus-storage/statue-krishna_7eabe599.jpg",
+  // Decor
+  clockStand: "/manus-storage/decor-clock-stand_cd6f2b2c.jpg",
+  nameplate: "/manus-storage/decor-nameplate_06e7b5d1.jpeg",
+};
+
 export const CATEGORIES: Category[] = [
   {
     id: "sport-trophy",
     name: "Sport Trophy",
     count: 35,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp",
+    image: IMG.badminton,
     description: "Celebrate athletic excellence with our premium sport trophies for cricket, badminton, chess, football, and more.",
     icon: "🏆",
   },
@@ -41,7 +78,7 @@ export const CATEGORIES: Category[] = [
     id: "award-trophy",
     name: "Award Trophy",
     count: 16,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp",
+    image: IMG.fiberStar,
     description: "Elegant award trophies for corporate events, cultural programs, and special recognition ceremonies.",
     icon: "⭐",
   },
@@ -49,7 +86,7 @@ export const CATEGORIES: Category[] = [
     id: "wooden-trophy",
     name: "Wooden Trophy",
     count: 9,
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80",
+    image: IMG.mdfMemento,
     description: "Timeless wooden trophies and mementos crafted from premium wood with intricate detailing.",
     icon: "🪵",
   },
@@ -57,7 +94,7 @@ export const CATEGORIES: Category[] = [
     id: "crystal-trophy",
     name: "Crystal Trophy",
     count: 3,
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/crystal-trophy-category-AzrMz7d9xMqwHrP7Akuk6D.webp",
+    image: IMG.crystal12,
     description: "Stunning crystal and glass trophies that catch light beautifully — perfect for prestigious awards.",
     icon: "💎",
   },
@@ -65,7 +102,7 @@ export const CATEGORIES: Category[] = [
     id: "bodybuilder-trophy",
     name: "Bodybuilder Trophy",
     count: 4,
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80",
+    image: IMG.bodybuilderAcrylic,
     description: "Powerful bodybuilder and fitness trophies that honor strength, dedication, and athletic achievement.",
     icon: "💪",
   },
@@ -73,7 +110,7 @@ export const CATEGORIES: Category[] = [
     id: "acrylic-trophy",
     name: "Acrylic Trophy",
     count: 2,
-    image: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&q=80",
+    image: IMG.acrylicWinner,
     description: "Modern acrylic trophies with a sleek, contemporary look ideal for all occasions.",
     icon: "🔷",
   },
@@ -81,7 +118,7 @@ export const CATEGORIES: Category[] = [
     id: "metal-trophy",
     name: "Metal Trophy",
     count: 2,
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80",
+    image: IMG.metalCup18,
     description: "Durable and prestigious metal trophies with polished finishes for lasting impressions.",
     icon: "🥇",
   },
@@ -89,7 +126,7 @@ export const CATEGORIES: Category[] = [
     id: "statue",
     name: "Statues & Idols",
     count: 5,
-    image: "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=600&q=80",
+    image: IMG.statueShivaji,
     description: "Beautifully crafted Chhatrapati Shivaji Maharaj statues, Krishna idols, and decorative resin statues.",
     icon: "🗿",
   },
@@ -97,7 +134,7 @@ export const CATEGORIES: Category[] = [
     id: "decor",
     name: "Decor & Accessories",
     count: 3,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+    image: IMG.clockStand,
     description: "Elegant pen stands, wooden name plates, and table clocks for your office or home.",
     icon: "🖊️",
   },
@@ -105,86 +142,90 @@ export const CATEGORIES: Category[] = [
 
 export const PRODUCTS: Product[] = [
   // ── Sport Trophies ──
-  { id: "st-001", name: "15inch Acrylic Badminton Runner Up Trophy", price: 1650, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "15inch", color: "Golden", usage: "Games", style: "Sports", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp", featured: true },
-  { id: "st-002", name: "8inch Fiber Golden Boot Winner Trophy", price: 450, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "8inch", color: "Golden", usage: "Games", style: "Sports", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-003", name: "18inch Resin Chess Winner Trophy", price: 2800, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "18inch", color: "Black", usage: "Games", style: "Sports", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp", featured: true },
-  { id: "st-004", name: "10inch Fiber Sports Runner Winner Trophy", price: 280, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "College", minOrder: 100, image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-005", name: "10.5inch Resin Cricket Winner Trophy", price: 2100, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "10.5inch", color: "Golden", usage: "Games", style: "Sports", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp", featured: true },
-  { id: "st-006", name: "10inch Resin Lawn Tennis Winner Trophy", price: 650, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "10inch", color: "Brown", usage: "Games", minOrder: 100, image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-007", name: "12inch Acrylic Carrom Winner Trophy", price: 650, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "12inch", color: "Yellow", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-008", name: "10inch Acrylic Racing Cup Winner Trophy", price: 450, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "st-009", name: "10inch Acrylic Cricket Wicket Winner Trophy", price: 1250, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "White", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-010", name: "10inch Acrylic Cricket Mementos Trophy", price: 450, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "st-011", name: "15inch Acrylic Badminton Winner Trophy", price: 1500, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "15inch", color: "Blue", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-012", name: "5inch Acrylic Carrom Board Winner Trophy", price: 200, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "5inch", color: "Brown", usage: "Games", minOrder: 100, image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "st-013", name: "10inch Acrylic Man Of The Match Winner Trophy", price: 400, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "Dark Brown", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-014", name: "14inch Wooden Cricket Winner Trophy", price: 1200, priceUnit: "Piece", category: "sport-trophy", material: "Wooden", size: "14inch", color: "Black", usage: "Games", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" },
-  { id: "st-015", name: "12inch Metal Bowler Winner Trophy", price: 1300, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "12inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp", featured: true },
-  { id: "st-016", name: "12inch Fiber Pickle Ball Winner Trophy", price: 1800, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "12inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-017", name: "15inch Fiber Cricket Winner Trophy", price: 1800, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "15inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "st-018", name: "8inch Metal Batsmen Winner Trophy", price: 1300, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "8inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp", featured: true },
-  { id: "st-019", name: "9inch Metal Cricket Tournament Winner Trophy", price: 1700, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "9inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "st-020", name: "19inch Metal Cricket World Cup Winner Trophy", price: 2000, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "19inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp", featured: true },
-  { id: "st-021", name: "11inch Metal Cricket Winner Trophy", price: 1450, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "11inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "st-022", name: "45inch Fiber Cricket Winner Cup Trophy", price: 4900, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "45inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp", featured: true },
-  { id: "st-023", name: "18inch Fiber Cricket Winner Trophy", price: 2800, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "18inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "st-024", name: "10inch Resin Golden Chess Winner Trophy", price: 950, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "10inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "st-025", name: "8inch Acrylic Pickle Ball Winner Trophy", price: 500, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "8inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
+  { id: "st-001", name: "15inch Acrylic Badminton Runner Up Trophy", price: 1650, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "15inch", color: "Golden", usage: "Games", style: "Sports", image: IMG.badminton, featured: true },
+  { id: "st-002", name: "8inch Fiber Golden Boot Winner Trophy", price: 450, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "8inch", color: "Golden", usage: "Games", style: "Sports", image: IMG.fiberStar },
+  { id: "st-003", name: "18inch Resin Chess Winner Trophy", price: 2800, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "18inch", color: "Black", usage: "Games", style: "Sports", image: IMG.metalCup, featured: true },
+  { id: "st-004", name: "10inch Fiber Sports Runner Winner Trophy", price: 280, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "College", minOrder: 100, image: IMG.fiberChampions },
+  { id: "st-005", name: "10.5inch Resin Cricket Winner Trophy", price: 2100, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "10.5inch", color: "Golden", usage: "Games", style: "Sports", image: IMG.metalCup, featured: true },
+  { id: "st-006", name: "10inch Resin Lawn Tennis Winner Trophy", price: 650, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "10inch", color: "Brown", usage: "Games", minOrder: 100, image: IMG.badminton },
+  { id: "st-007", name: "12inch Acrylic Carrom Winner Trophy", price: 650, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "12inch", color: "Yellow", usage: "Games", image: IMG.acrylicWinner },
+  { id: "st-008", name: "10inch Acrylic Racing Cup Winner Trophy", price: 450, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "Golden", usage: "Games", image: IMG.acrylicPainting },
+  { id: "st-009", name: "10inch Acrylic Cricket Wicket Winner Trophy", price: 1250, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "White", usage: "Games", image: IMG.badminton },
+  { id: "st-010", name: "10inch Acrylic Cricket Mementos Trophy", price: 450, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "Golden", usage: "Games", image: IMG.acrylicWinner },
+  { id: "st-011", name: "15inch Acrylic Badminton Winner Trophy", price: 1500, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "15inch", color: "Blue", usage: "Games", image: IMG.badminton },
+  { id: "st-012", name: "5inch Acrylic Carrom Board Winner Trophy", price: 200, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "5inch", color: "Brown", usage: "Games", minOrder: 100, image: IMG.acrylicPainting },
+  { id: "st-013", name: "10inch Acrylic Man Of The Match Winner Trophy", price: 400, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "10inch", color: "Dark Brown", usage: "Games", image: IMG.acrylicWinner },
+  { id: "st-014", name: "14inch Wooden Cricket Winner Trophy", price: 1200, priceUnit: "Piece", category: "sport-trophy", material: "Wooden", size: "14inch", color: "Black", usage: "Games", image: IMG.woodenAward8 },
+  { id: "st-015", name: "12inch Metal Bowler Winner Trophy", price: 1300, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "12inch", color: "Golden", usage: "Games", image: IMG.metalCup, featured: true },
+  { id: "st-016", name: "12inch Fiber Pickle Ball Winner Trophy", price: 1800, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "12inch", color: "Golden", usage: "Games", image: IMG.fiberChampions },
+  { id: "st-017", name: "15inch Fiber Cricket Winner Trophy", price: 1800, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "15inch", color: "Golden", usage: "Games", image: IMG.fiberBook },
+  { id: "st-018", name: "8inch Metal Batsmen Winner Trophy", price: 1300, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "8inch", color: "Golden", usage: "Games", image: IMG.metalCup, featured: true },
+  { id: "st-019", name: "9inch Metal Cricket Tournament Winner Trophy", price: 1700, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "9inch", color: "Golden", usage: "Games", image: IMG.metalCup18 },
+  { id: "st-020", name: "19inch Metal Cricket World Cup Winner Trophy", price: 2000, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "19inch", color: "Golden", usage: "Games", image: IMG.metalCup18, featured: true },
+  { id: "st-021", name: "11inch Metal Cricket Winner Trophy", price: 1450, priceUnit: "Piece", category: "sport-trophy", material: "Metal", size: "11inch", color: "Golden", usage: "Games", image: IMG.metalCup },
+  { id: "st-022", name: "45inch Fiber Cricket Winner Cup Trophy", price: 4900, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "45inch", color: "Golden", usage: "Games", image: IMG.fiberBook, featured: true },
+  { id: "st-023", name: "18inch Fiber Cricket Winner Trophy", price: 2800, priceUnit: "Piece", category: "sport-trophy", material: "Fiber", size: "18inch", color: "Golden", usage: "Games", image: IMG.fiberChampions },
+  { id: "st-024", name: "10inch Resin Golden Chess Winner Trophy", price: 950, priceUnit: "Piece", category: "sport-trophy", material: "Resin", size: "10inch", color: "Golden", usage: "Games", image: IMG.metalCup },
+  { id: "st-025", name: "8inch Acrylic Pickle Ball Winner Trophy", price: 500, priceUnit: "Piece", category: "sport-trophy", material: "Acrylic", size: "8inch", color: "Golden", usage: "Games", image: IMG.acrylicWinner },
 
   // ── Award Trophies ──
-  { id: "at-001", name: "10inch Metal Cup Winner Trophy", price: 4800, priceUnit: "Piece", category: "award-trophy", material: "Metal", size: "10inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp", featured: true },
-  { id: "at-002", name: "8inch Fiber Star Award Trophy", price: 150, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "8inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "at-003", name: "6inch Fiber Golden Star Winner Trophy", price: 200, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "6inch", color: "Pink", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "at-004", name: "10inch Fiber Award Trophy", price: 600, priceUnit: "Set", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden and Silver", usage: "Events", minOrder: 100, image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "at-005", name: "6inch Metal Cup Trophy", price: 200, priceUnit: "Piece", category: "award-trophy", material: "Metal", size: "6inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "at-006", name: "10inch Metal Star Excellence Award Winner Trophy", price: 900, priceUnit: "Piece", category: "award-trophy", material: "Metal", size: "10inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp", featured: true },
-  { id: "at-007", name: "10inch Fiber Memento Trophy", price: 800, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "at-008", name: "10inch Fiber Music Award Winner Trophy", price: 500, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "at-009", name: "10inch Fiber Golden Book Pen Trophy", price: 1250, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp", featured: true },
-  { id: "at-010", name: "10inch Fiber Winner Trophy", price: 250, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "at-011", name: "10inch Fiber Champions Winner Trophy", price: 400, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "at-012", name: "16inch Fiber Award Trophy", price: 500, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "16inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "at-013", name: "18inch Fiber Award Trophy", price: 1200, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "18inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "at-014", name: "5inch Fiber Singer Winner Trophy", price: 300, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "5inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "at-015", name: "10inch Marble Corporate Award Winner Trophy", price: 950, priceUnit: "Piece", category: "award-trophy", material: "Marble", size: "10inch", color: "White", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp", featured: true },
+  { id: "at-001", name: "10inch Metal Cup Winner Trophy", price: 4800, priceUnit: "Piece", category: "award-trophy", material: "Metal", size: "10inch", color: "Golden", usage: "Games", image: IMG.metalCup18, featured: true },
+  { id: "at-002", name: "8inch Fiber Star Award Trophy", price: 150, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "8inch", color: "Golden", usage: "Events", image: IMG.fiberStar },
+  { id: "at-003", name: "6inch Fiber Golden Star Winner Trophy", price: 200, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "6inch", color: "Pink", usage: "Events", image: IMG.fiberStar },
+  { id: "at-004", name: "10inch Fiber Award Trophy", price: 600, priceUnit: "Set", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden and Silver", usage: "Events", minOrder: 100, image: IMG.fiberChampions },
+  { id: "at-005", name: "6inch Metal Cup Trophy", price: 200, priceUnit: "Piece", category: "award-trophy", material: "Metal", size: "6inch", color: "Golden", usage: "Events", image: IMG.metalCup },
+  { id: "at-006", name: "10inch Metal Star Excellence Award Winner Trophy", price: 900, priceUnit: "Piece", category: "award-trophy", material: "Metal", size: "10inch", color: "Golden", usage: "Events", image: IMG.metalStar, featured: true },
+  { id: "at-007", name: "10inch Fiber Memento Trophy", price: 800, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: IMG.fiberBook },
+  { id: "at-008", name: "10inch Fiber Music Award Winner Trophy", price: 500, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: IMG.fiberMusic },
+  { id: "at-009", name: "10inch Fiber Golden Book Pen Trophy", price: 1250, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: IMG.fiberBook, featured: true },
+  { id: "at-010", name: "10inch Fiber Winner Trophy", price: 250, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Events", image: IMG.fiberChampions },
+  { id: "at-011", name: "10inch Fiber Champions Winner Trophy", price: 400, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "10inch", color: "Golden", usage: "Games", image: IMG.fiberChampions },
+  { id: "at-012", name: "16inch Fiber Award Trophy", price: 500, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "16inch", color: "Golden", usage: "Events", image: IMG.fiberMusic },
+  { id: "at-013", name: "18inch Fiber Award Trophy", price: 1200, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "18inch", color: "Golden", usage: "Events", image: IMG.fiberBook },
+  { id: "at-014", name: "5inch Fiber Singer Winner Trophy", price: 300, priceUnit: "Piece", category: "award-trophy", material: "Fiber", size: "5inch", color: "Golden", usage: "Events", image: IMG.fiberStar },
+  { id: "at-015", name: "10inch Marble Corporate Award Winner Trophy", price: 950, priceUnit: "Piece", category: "award-trophy", material: "Marble", size: "10inch", color: "White", usage: "Events", image: IMG.marbleCorporate, featured: true },
 
   // ── Wooden Trophies ──
-  { id: "wt-001", name: "12inch MDF Memento Trophy", price: 1250, priceUnit: "Piece", category: "wooden-trophy", material: "MDF", size: "12inch", color: "Brown", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp", featured: true },
-  { id: "wt-002", name: "10inch Wooden Memento Trophy", price: 800, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "10inch", color: "Brown", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "wt-003", name: "8inch Wooden Memento Trophy", price: 750, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "8inch", color: "Brown", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp" },
-  { id: "wt-004", name: "11inch Wooden Memento Trophy", price: 240, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "11inch", color: "Brown", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "wt-005", name: "10.5inch Wooden Memento Trophy", price: 800, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "10.5inch", color: "Brown", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp" },
+  { id: "wt-001", name: "12inch MDF Memento Trophy", price: 1250, priceUnit: "Piece", category: "wooden-trophy", material: "MDF", size: "12inch", color: "Brown", usage: "Events", image: IMG.mdfMemento, featured: true },
+  { id: "wt-002", name: "10inch Wooden Memento Trophy", price: 800, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "10inch", color: "Brown", usage: "Events", image: IMG.woodenMemento10 },
+  { id: "wt-003", name: "8inch Wooden Memento Trophy", price: 750, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "8inch", color: "Brown", usage: "Events", image: IMG.woodenAward8 },
+  { id: "wt-004", name: "11inch Wooden Memento Trophy", price: 240, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "11inch", color: "Brown", usage: "Events", image: IMG.woodenMemento10 },
+  { id: "wt-005", name: "10.5inch Wooden Memento Trophy", price: 800, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "10.5inch", color: "Brown", usage: "Events", image: IMG.mdfMemento },
+  { id: "wt-006", name: "11.5inch Wooden Memento Trophy", price: 850, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "11.5inch", color: "Brown", usage: "Events", image: IMG.woodenAward8 },
+  { id: "wt-007", name: "8.5inch Wooden Memento Trophy", price: 700, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "8.5inch", color: "Brown", usage: "Events", image: IMG.woodenMemento10 },
+  { id: "wt-008", name: "5inch MDF Memento Trophy", price: 350, priceUnit: "Piece", category: "wooden-trophy", material: "MDF", size: "5inch", color: "Brown", usage: "Events", image: IMG.mdfMemento },
+  { id: "wt-009", name: "8inch Wooden Award Trophy", price: 600, priceUnit: "Piece", category: "wooden-trophy", material: "Wooden", size: "8inch", color: "Brown", usage: "Events", image: IMG.woodenAward8 },
 
   // ── Crystal Trophies ──
-  { id: "ct-001", name: "12inch Crystal Award Trophy", price: 1250, priceUnit: "Piece", category: "crystal-trophy", material: "Crystal", size: "12inch", color: "Clear", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/crystal-trophy-category-AzrMz7d9xMqwHrP7Akuk6D.webp", featured: true },
-  { id: "ct-002", name: "7inch Crystal Award Trophy", price: 1800, priceUnit: "Piece", category: "crystal-trophy", material: "Crystal", size: "7inch", color: "Clear", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/crystal-trophy-category-AzrMz7d9xMqwHrP7Akuk6D.webp" },
-  { id: "ct-003", name: "6inch Crystal Award Trophy", price: 1150, priceUnit: "Piece", category: "crystal-trophy", material: "Crystal", size: "6inch", color: "Clear", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/crystal-trophy-category-AzrMz7d9xMqwHrP7Akuk6D.webp" },
+  { id: "ct-001", name: "12inch Crystal Award Trophy", price: 1250, priceUnit: "Piece", category: "crystal-trophy", material: "Crystal", size: "12inch", color: "Clear", usage: "Events", image: IMG.crystal12, featured: true },
+  { id: "ct-002", name: "7inch Crystal Award Trophy", price: 1800, priceUnit: "Piece", category: "crystal-trophy", material: "Crystal", size: "7inch", color: "Clear", usage: "Events", image: IMG.crystal7 },
+  { id: "ct-003", name: "6inch Crystal Award Trophy", price: 1150, priceUnit: "Piece", category: "crystal-trophy", material: "Crystal", size: "6inch", color: "Clear", usage: "Events", image: IMG.crystal12 },
 
   // ── Bodybuilder Trophies ──
-  { id: "bt-001", name: "8inch Acrylic Bodybuilders Winner Trophy", price: 350, priceUnit: "Piece", category: "bodybuilder-trophy", material: "Acrylic", size: "8inch", color: "Golden", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp", featured: true },
-  { id: "bt-002", name: "14inch Resin Bodybuilder Winner Trophy", price: 1450, priceUnit: "Piece", category: "bodybuilder-trophy", material: "Resin", size: "14inch", color: "Bronze", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
-  { id: "bt-003", name: "11inch Resin Bodybuilder Winner Trophy", price: 1150, priceUnit: "Piece", category: "bodybuilder-trophy", material: "Resin", size: "11inch", color: "Bronze", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp" },
-  { id: "bt-004", name: "10inch Resin Bodybuilder Winner Trophy", price: 850, priceUnit: "Piece", category: "bodybuilder-trophy", material: "Resin", size: "10inch", color: "Bronze", usage: "Games", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
+  { id: "bt-001", name: "8inch Acrylic Bodybuilders Winner Trophy", price: 350, priceUnit: "Piece", category: "bodybuilder-trophy", material: "Acrylic", size: "8inch", color: "Golden", usage: "Games", image: IMG.bodybuilderAcrylic, featured: true },
+  { id: "bt-002", name: "14inch Resin Bodybuilder Winner Trophy", price: 1450, priceUnit: "Piece", category: "bodybuilder-trophy", material: "Resin", size: "14inch", color: "Bronze", usage: "Games", image: IMG.bodybuilderResin14 },
+  { id: "bt-003", name: "11inch Resin Bodybuilder Winner Trophy", price: 1150, priceUnit: "Piece", category: "bodybuilder-trophy", material: "Resin", size: "11inch", color: "Bronze", usage: "Games", image: IMG.bodybuilderAcrylic },
+  { id: "bt-004", name: "10inch Resin Bodybuilder Winner Trophy", price: 850, priceUnit: "Piece", category: "bodybuilder-trophy", material: "Resin", size: "10inch", color: "Bronze", usage: "Games", image: IMG.bodybuilderResin14 },
 
   // ── Acrylic Trophies ──
-  { id: "acr-001", name: "11inch Acrylic Winner Trophy", price: 750, priceUnit: "Piece", category: "acrylic-trophy", material: "Acrylic", size: "11inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/crystal-trophy-category-AzrMz7d9xMqwHrP7Akuk6D.webp", featured: true },
-  { id: "acr-002", name: "5inch Acrylic Painting Winner Trophy", price: 200, priceUnit: "Piece", category: "acrylic-trophy", material: "Acrylic", size: "5inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
+  { id: "acr-001", name: "11inch Acrylic Winner Trophy", price: 750, priceUnit: "Piece", category: "acrylic-trophy", material: "Acrylic", size: "11inch", color: "Golden", usage: "Events", image: IMG.acrylicWinner, featured: true },
+  { id: "acr-002", name: "5inch Acrylic Painting Winner Trophy", price: 200, priceUnit: "Piece", category: "acrylic-trophy", material: "Acrylic", size: "5inch", color: "Golden", usage: "Events", image: IMG.acrylicPainting },
 
   // ── Metal Trophies ──
-  { id: "mt-001", name: "18inch Metal Cup Trophy", price: 3800, priceUnit: "Piece", category: "metal-trophy", material: "Metal", size: "18inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp", featured: true },
-  { id: "mt-002", name: "20inch Metal Award Trophy", price: 600, priceUnit: "Piece", category: "metal-trophy", material: "Metal", size: "20inch", color: "Golden", usage: "Events", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/sport-trophy-category-ZcihEDBCpCtrTxn4radZzk.webp" },
+  { id: "mt-001", name: "18inch Metal Cup Trophy", price: 3800, priceUnit: "Piece", category: "metal-trophy", material: "Metal", size: "18inch", color: "Golden", usage: "Events", image: IMG.metalCup18, featured: true },
+  { id: "mt-002", name: "20inch Metal Award Trophy", price: 600, priceUnit: "Piece", category: "metal-trophy", material: "Metal", size: "20inch", color: "Golden", usage: "Events", image: IMG.metalAward20 },
 
   // ── Statues ──
-  { id: "ss-001", name: "12inch Resin Shivaji Maharaj Statue", price: 1150, priceUnit: "Piece", category: "statue", material: "Resin", size: "12inch", color: "Bronze", usage: "Decor", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp", featured: true },
-  { id: "ss-002", name: "13inch Resin Shivaji Maharaj Statue", price: 1150, priceUnit: "Piece", category: "statue", material: "Resin", size: "13inch", color: "Bronze", usage: "Decor", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp" },
-  { id: "ss-003", name: "14inch Resin Krishna Statue", price: 3500, priceUnit: "Idol", category: "statue", material: "Resin", size: "14inch", color: "Multicolor", usage: "Decor", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
-  { id: "ss-004", name: "12inch Resin Shree Krishna Statue", price: 3500, priceUnit: "Idol", category: "statue", material: "Resin", size: "12inch", color: "Multicolor", usage: "Decor", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp" },
-  { id: "ss-005", name: "5inch Resin Bull Statue", price: 450, priceUnit: "Piece", category: "statue", material: "Resin", size: "5inch", color: "Brown", usage: "Decor", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
+  { id: "ss-001", name: "12inch Resin Shivaji Maharaj Statue", price: 1150, priceUnit: "Piece", category: "statue", material: "Resin", size: "12inch", color: "Bronze", usage: "Decor", image: IMG.statueShivaji, featured: true },
+  { id: "ss-002", name: "13inch Resin Shivaji Maharaj Statue", price: 1150, priceUnit: "Piece", category: "statue", material: "Resin", size: "13inch", color: "Bronze", usage: "Decor", image: IMG.statueShivaji },
+  { id: "ss-003", name: "14inch Resin Krishna Statue", price: 3500, priceUnit: "Idol", category: "statue", material: "Resin", size: "14inch", color: "Multicolor", usage: "Decor", image: IMG.statueKrishna },
+  { id: "ss-004", name: "12inch Resin Shree Krishna Statue", price: 3500, priceUnit: "Idol", category: "statue", material: "Resin", size: "12inch", color: "Multicolor", usage: "Decor", image: IMG.statueKrishna },
+  { id: "ss-005", name: "5inch Resin Bull Statue", price: 450, priceUnit: "Piece", category: "statue", material: "Resin", size: "5inch", color: "Brown", usage: "Decor", image: IMG.statueShivaji },
 
   // ── Decor & Accessories ──
-  { id: "dc-001", name: "Wooden Table Clock Pen Stand", price: 350, priceUnit: "Piece", category: "decor", material: "Wooden", size: "Standard", color: "Brown", usage: "Office Decor", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp", featured: true },
-  { id: "dc-002", name: "3mm Wooden Name Plate", price: 800, priceUnit: "Piece", category: "decor", material: "Wooden", size: "3mm", color: "Brown", usage: "Office Decor", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp" },
-  { id: "dc-003", name: "Wooden Pen Stand", price: 250, priceUnit: "Piece", category: "decor", material: "Wooden", size: "Standard", color: "Brown", usage: "Office Decor", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/award-trophy-category-WKSsHuE7gpitTetqYRtgLK.webp" },
+  { id: "dc-001", name: "Wooden Table Clock Pen Stand", price: 350, priceUnit: "Piece", category: "decor", material: "Wooden", size: "Standard", color: "Brown", usage: "Office Decor", image: IMG.clockStand, featured: true },
+  { id: "dc-002", name: "3mm Wooden Name Plate", price: 800, priceUnit: "Piece", category: "decor", material: "Wooden", size: "3mm", color: "Brown", usage: "Office Decor", image: IMG.nameplate },
+  { id: "dc-003", name: "Wooden Pen Stand", price: 250, priceUnit: "Piece", category: "decor", material: "Wooden", size: "Standard", color: "Brown", usage: "Office Decor", image: IMG.clockStand },
 ];
 
 export const FEATURED_PRODUCTS = PRODUCTS.filter(p => p.featured).slice(0, 8);

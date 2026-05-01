@@ -64,12 +64,12 @@ export default function ProductDetail() {
             animate={{ opacity: 1, x: 0 }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden bg-card border border-border aspect-square">
+            <div className="rounded-2xl overflow-hidden bg-gradient-to-b from-accent/20 to-accent/50 border border-border aspect-square flex items-center justify-center">
               <img
                 src={imgError ? "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" : product.image}
                 alt={product.name}
                 onError={() => setImgError(true)}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-6"
               />
             </div>
             {product.featured && (

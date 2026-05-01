@@ -5,7 +5,7 @@
    ============================================================ */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Sun, Moon, Trophy, Phone, ShoppingBag } from "lucide-react";
+import { Menu, X, Sun, Moon, Phone, ShoppingBag } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -65,9 +65,11 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/">
               <div className="flex items-center gap-2.5 group">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-lg group-hover:shadow-yellow-400/30 transition-all duration-300">
-                  <Trophy className="w-5 h-5 text-yellow-950" />
-                </div>
+                <img
+                  src="/manus-storage/mausam-logo-original_d18bff3f.jpeg"
+                  alt="Mausam Creation"
+                  className="w-11 h-11 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
+                />
                 <div>
                   <span className="font-['Playfair_Display'] font-bold text-base leading-tight block text-foreground">
                     Mausam

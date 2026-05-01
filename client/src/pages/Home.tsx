@@ -129,17 +129,22 @@ export default function Home() {
         ref={heroRef}
         className="relative min-h-screen flex items-center overflow-hidden"
       >
-        {/* Background Image with Parallax */}
+        {/* Background Video with Parallax */}
         <motion.div
           className="absolute inset-0 z-0"
           style={{ y: heroY }}
         >
-          <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-trophies-9nJnSxCGG69JV5Ghopgufm.webp"
-            alt="Premium Trophy Collection"
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20 dark:from-background dark:via-background/85 dark:to-background/30" />
+            poster="https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/hero-video-ref-A7QyNfcAq8d2erZ2bifdt3.webp"
+          >
+            <source src="/manus-storage/hero-video_b48edbf8.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/75 to-background/10 dark:from-background dark:via-background/80 dark:to-background/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </motion.div>
 
@@ -304,14 +309,14 @@ export default function Home() {
                   <div className="card-beam group relative rounded-2xl overflow-hidden bg-card border border-border product-card cursor-pointer">
                     <div className="bg-card rounded-2xl overflow-hidden">
                       {/* Image */}
-                      <div className="relative h-52 overflow-hidden">
+                      <div className="relative h-52 overflow-hidden bg-gradient-to-b from-accent/20 to-accent/50 flex items-center justify-center">
                         <img
                           src={cat.image}
                           alt={cat.name}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="w-full h-full object-contain p-3 transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                         {/* Icon */}
                         <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-gold/20 backdrop-blur-sm border border-gold/30 flex items-center justify-center text-xl">
                           {cat.icon}
@@ -386,7 +391,7 @@ export default function Home() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663219430874/6CqYEmFXebAK7qztirwcW6/custom-design-banner-8snUkvBgit2WTPrfhNUa3G.webp"
+            src="/manus-storage/hero-video-last-8fyihMCoZzv9FGMgfdcFdQ.webp"
             alt="Custom Trophy Design"
             className="w-full h-full object-cover"
           />

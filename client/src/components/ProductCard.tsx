@@ -28,12 +28,12 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         {/* Inner content wrapper */}
         <div className="bg-card rounded-2xl overflow-hidden">
           {/* Image */}
-          <div className="relative overflow-hidden aspect-[4/3] bg-accent/30">
+          <div className="relative overflow-hidden aspect-[4/3] bg-gradient-to-b from-accent/20 to-accent/40 flex items-center justify-center">
             <img
               src={imgError ? "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" : product.image}
               alt={product.name}
               onError={() => setImgError(true)}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
             {/* Overlay on hover */}

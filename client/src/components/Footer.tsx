@@ -3,7 +3,7 @@
    Design: Rich dark footer with gold accents, links, contact info
    ============================================================ */
 import { Link } from "wouter";
-import { Trophy, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from "lucide-react";
 
 const FOOTER_LINKS = {
   Products: [
@@ -33,9 +33,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
-                  <Trophy className="w-5 h-5 text-yellow-950" />
-                </div>
+                <img
+                  src="/manus-storage/mausam-logo-original_d18bff3f.jpeg"
+                  alt="Mausam Creation"
+                  className="w-12 h-12 object-contain rounded-lg"
+                />
                 <div>
                   <span className="font-['Playfair_Display'] font-bold text-lg text-foreground block leading-tight">
                     Mausam Creation

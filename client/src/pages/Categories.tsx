@@ -43,14 +43,14 @@ export default function Categories() {
                 <div className="card-beam group rounded-2xl bg-card border border-border product-card overflow-hidden cursor-pointer">
                   <div className="bg-card rounded-2xl overflow-hidden">
                     {/* Image */}
-                    <div className="relative h-56 overflow-hidden">
+                    <div className="relative h-56 overflow-hidden bg-gradient-to-b from-accent/20 to-accent/50 flex items-center justify-center">
                       <img
                         src={cat.image}
                         alt={cat.name}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                       <div className="absolute top-4 right-4 text-3xl">{cat.icon}</div>
                     </div>
 
